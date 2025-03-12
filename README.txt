@@ -1,8 +1,4 @@
-# Recipe Website
-
-This is an ongoing project for a recipe website where users can search for recipes, view detailed recipe information, and interact with recipes by commenting, rating, and saving their favorites. The project is currently under development, and more features will be added as it progresses.
-
-## Features
+# 🚀 Features
 
 ### Implemented Features
 - **User Registration**: Users can register an account to access additional features.
@@ -22,14 +18,21 @@ This is an ongoing project for a recipe website where users can search for recip
 - **Search Functionality**: Users can search for recipes based on various fields (e.g., name, ingredients).
 - **View Recipe Details**: Users can view detailed information for each recipe.
 
-## Tech Stack
+# 🛠️ Technologies Used
 
 - **Front-end**: Razor Pages (C#), HTML, CSS, JavaScript
 - **Back-end**: C# (ASP.NET Core with Razor Pages)
 - **Database**: SQL Server
 - **Other**: ADO.NET, SQL Client
 
-## Installation
+# 🔑 Default Credentials
+
+- To get started, you can use the default admin credentials to log into the system:
+
+  - **Username**: admin
+  - **Password**: admin
+
+# 📌 How to Run
 
 1. Clone the repository:
    ```bash
@@ -44,3 +47,6 @@ This is an ongoing project for a recipe website where users can search for recip
      
      return _connectionString;
  }
+
+Contributing
+If you'd like to contribute to the development of this project, feel free to fork the repository and submit a pull request with improvements or additional features.
