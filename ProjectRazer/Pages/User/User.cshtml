@@ -1,0 +1,38 @@
+﻿@page
+@model ProjectRazer.Pages.UserModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1 class="text-center my-4 text-light">@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="CheckUserName" method="post" class="shadow-lg p-4 rounded bg-dark text-light">
+
+                <!-- Username input -->
+                <div class="mb-3">
+                    <label for="txtName" class="form-label text-light">Username</label>
+                    <input asp-for="Username" class="form-control bg-secondary text-light border-0 rounded-3" id="txtName" placeholder="Enter your username" />
+                </div>
+
+                <!-- Password input -->
+                <div class="mb-3">
+                    <label for="txtContactSubject" class="form-label text-light">Password</label>
+                    <input asp-for="Password" type="password" class="form-control bg-secondary text-light border-0 rounded-3" id="txtContactSubject" placeholder="Enter your password" />
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-grid gap-2">
+                    <button id="btnSubmit" class="btn btn-primary rounded-3" type="submit">Login</button>
+                    <button id="btnCreate" class="btn btn-secondary rounded-3" type="submit" asp-page-handler="CreateNewUser" name="userId">Register</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<p class="text-center text-danger mt-3">@Model.Message</p>

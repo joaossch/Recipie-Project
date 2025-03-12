@@ -1,0 +1,50 @@
+﻿@page
+@model ProjectRazer.Pages.Admin.ProductsModel
+@{
+}
+<div class="container mt-4">
+    <h2 class="mb-4">Manage Ingredients</h2>
+
+    
+    <div class="card mb-4">
+        <div class="card-header">Add New Ingredient</div>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="labels text-light"><strong>Name</strong></label>
+                    @Html.TextBoxFor(x => x.Name, new { id = "txtName", @class = "form-control form-control-lg bg-secondary text-white border-0" })
+                </div>
+                <p class="text-center text-danger mt-3">@Model.Message</p>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="card">
+        <div class="card-header">Available Ingredients</div>
+        <div class="card-body">
+            @if (Model.IngredientsList != null && Model.IngredientsList.Any())
+            {
+                <ul class="list-group">
+                    @foreach (var ingredient in Model.IngredientsList)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>@ingredient.Name</span>
+                            <div>
+
+                                <form method="post" asp-page-handler="Edit" asp-route-id="@ingredient.Id" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-danger">Edit</button>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="text-muted mt-3">No ingredients available.</p>
+            }
+        </div>
+    </div>
+</div>

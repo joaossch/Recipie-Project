@@ -1,0 +1,113 @@
+﻿@page
+@model ProjectRazer.Pages.Admin.AdminModel
+@{
+}
+<body class="bg-dark text-light">
+    <div class="d-flex">
+        <div class="bg-dark p-3" style="width: 250px; height: 100vh;">
+            <h3 class="text-center text-light">Admin Panel</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-light d-flex align-items-center p-2 rounded" href="#" style="background-color: #333;">
+                        <i class="bi bi-people me-2"></i> Manage Users
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light d-flex align-items-center p-2 rounded" href="#" style="background-color: #333;">
+                        <i class="bi bi-book me-2"></i> Manage Recipes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <form method="post" asp-page-handler="RedirectProducts" class="w-100">
+                        <button type="submit" class="nav-link text-light d-flex align-items-center p-2 rounded w-100" style="background-color: #333; border: none;">
+                            <i class="bi bi-box-seam me-2"></i> Manage Products
+                        </button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <form method="post" asp-page-handler="RedirectMeasure" class="w-100">
+                        <button type="submit" class="nav-link text-light d-flex align-items-center p-2 rounded w-100" style="background-color: #333; border: none;">
+                            <i class="bi bi-rulers me-2"></i> Manage Measures
+                        </button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <form method="post" asp-page-handler="RedirectDifficulty" class="w-100">
+                        <button type="submit" class="nav-link text-light d-flex align-items-center p-2 rounded w-100" style="background-color: #333; border: none;">
+                            <i class="bi bi-bar-chart me-2"></i> Manage Difficulty
+                        </button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <form method="post" asp-page-handler="RedirectCategory" class="w-100">
+                        <button type="submit" class="nav-link text-light d-flex align-items-center p-2 rounded w-100" style="background-color: #333; border: none;">
+                            <i class="bi bi-tags me-2"></i> Manage Category
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+        
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand">Project Drinks</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h1 class="mb-4">Welcome to the Admin Dashboard</h1>
+            <div class="card mb-3" style="background-color: #333333;">
+                <div class="card-body">
+                    <h5 class="card-title">Admin Controls</h5>
+                    <p class="card-text">Manage users, drinks, and more.</p>
+                </div>
+            </div>
+
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card" style="background-color: #333333;">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Users</h5>
+                                <p class="card-text">456</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="background-color: #333333;">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Drinks</h5>
+                                <p class="card-text">120</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="background-color: #333333;">
+                            <div class="card-body">
+                                <h5 class="card-title">Active Sessions</h5>
+                                <p class="card-text">12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-light">
+        <div class="container text-center py-3">
+            &copy; 2025 ProjectRazer - Privacy
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿@page
+@model ProjectRazer.Pages.Admin.DifficultyEditModel
+@{
+}
+<div class="card mb-4">
+    <div class="card-header">Edit</div>
+    <div class="card-body">
+        <form method="post">
+            <div class="mb-3">
+                <label for="name" class="labels text-light"><strong>Name</strong></label>
+                @Html.TextBoxFor(x => x.Name, new { id = "txtName", @class = "form-control form-control-lg bg-secondary text-white border-0" })
+            </div>
+            <p class="text-center text-danger mt-3">@Model.Message</p>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>

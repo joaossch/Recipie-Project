@@ -1,0 +1,54 @@
+﻿@page
+@model ProjectRazer.Pages.UserCreateModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 class="text-center my-4 text-light">@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="EmployeeDetailsForm" method="post" class="shadow-lg p-4 rounded bg-dark text-light">
+
+                <!-- Name input -->
+                <div class="mb-3">
+                    <label for="txtName" class="form-label text-light">Name</label>
+                    @Html.TextBoxFor(x => x.Name, new { id = "txtName", @class = "form-control bg-secondary text-light border-0 rounded-3", placeholder = "Enter your name" })
+                </div>
+
+                <!-- Email input -->
+                <div class="mb-3">
+                    <label for="txtEmail" class="form-label text-light">Email</label>
+                    @Html.TextBoxFor(x => x.Email, new { id = "txtEmail", @class = "form-control bg-secondary text-light border-0 rounded-3", placeholder = "Enter your email" })
+                </div>
+
+                <!-- Username input -->
+                <div class="mb-3">
+                    <label for="txtUserName" class="form-label text-light">Username</label>
+                    @Html.TextBoxFor(x => x.Username, new { id = "txtUserName", @class = "form-control bg-secondary text-light border-0 rounded-3", placeholder = "Choose a username" })
+                </div>
+
+                <!-- Password input -->
+                <div class="mb-3">
+                    <label for="txtPassword" class="form-label text-light">Password</label>
+                    @Html.TextBoxFor(x => x.Password, new { id = "txtPassword", @class = "form-control bg-secondary text-light border-0 rounded-3", type = "password", placeholder = "Enter a password" })
+                </div>
+
+                <!-- Save Button -->
+                <div class="d-grid gap-2">
+                    <button id="btnSave" class="btn btn-primary rounded-3" type="submit">Save</button>
+                </div>
+
+                <!-- Message -->
+                <p class="text-center text-danger mt-3">@Model.Message</p>
+
+                <!-- Go back to login -->
+                <div class="text-center mt-4">
+                    <button id="btnSave" class="btn btn-secondary rounded-3" type="submit" asp-page-handler="RedirectUser">Go back to login</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

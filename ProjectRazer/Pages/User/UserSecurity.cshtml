@@ -1,0 +1,93 @@
+﻿@page
+@model ProjectRazer.Pages.User.UserSecurityModel
+@{
+}
+<div class="container-fluid pb-3">
+    <div class="d-flex flex-wrap">
+
+        @*Bar on the left side *@
+        <aside class="flex-grow-3">
+            <div class="card bg-dark text-light border-0 rounded-3 p-3 shadow-sm">
+
+                <div class="card-header bg-secondary border-0 text-center">
+                    <div class="d-flex flex-column align-items-center justify-content-center p-4">
+                        <img class="rounded-circle img-fluid" width="170px" src="" alt="User Image">
+                    </div>
+                    <h3 class="font-weight-bold text-white">@Model.Name</h3>
+                </div>
+
+                <div class="card-body bg-dark">
+                    <ul class="nav nav-pills flex-column text-center">
+
+
+                        <li class="mb-2">
+                            <form method="post" asp-page-handler="RedirectAccount">
+                                <button type="submit" class="list-group-item list-group-item-action rounded-pill text-white bg-dark border-0">
+                                    Account
+                                </button>
+                            </form>
+                        </li>
+
+                        <li class="mb-2">
+                            <a asp-page-handler="RedirectSettings" name="userId" class="list-group-item list-group-item-action rounded-pill text-white bg-dark border-0">Settings</a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a asp-page-handler="RedirectSecurity" name="userId" class="list-group-item list-group-item-action rounded-pill text-white bg-dark border-0">Security</a>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+
+            </div>
+        </aside>
+        @*Middle of the page information *@
+        <main class="flex-grow-1 ms-4">
+            <div class="card bg-dark text-light border-0 rounded-3 p-3 shadow-sm">
+                <div class="card-header bg-dark text-white rounded-3">
+                    <h2 class="m-0">Settings</h2>
+                </div>
+                <div class="card-body bg-dark">
+                    <form method="post">
+                        <div class="p-3">
+                            <div class="row mb-3">
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label for="oldPassword" class="labels text-light"><strong>Password</strong></label>
+                                    @Html.TextBoxFor(x => x.OldPassword, new { id = "txtOldPassword", @class = "form-control form-control-lg bg-secondary text-white border-0", type = "password" })
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label for="newPassword" class="labels text-light"><strong>New Password</strong></label>
+                                    @Html.TextBoxFor(x => x.NewPassword, new { id = "txtNewPassword", @class = "form-control form-control-lg bg-secondary text-white border-0", type = "password" })
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label for="confirmPassword" class="labels text-light"><strong>Confirm Password</strong></label>
+                                    @Html.TextBoxFor(x => x.ConfirmPassword, new { id = "txtConfirmPassword", @class = "form-control form-control-lg bg-secondary text-white border-0", type = "password" })
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <div class="col-md-12 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-success">Save Changes</button>
+                                    <p class="text-center text-danger mt-3">@Model.Message</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</div>

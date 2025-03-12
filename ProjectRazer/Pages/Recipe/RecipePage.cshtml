@@ -1,0 +1,65 @@
+﻿    @page
+    @{
+    }
+<div class="container mt-4">
+    <h2 class="custom-title-left mb-5">Your Recipes</h2>
+
+    <div class="row">
+        
+        <div class="col-12 col-md-4 col-lg-3 mb-4">
+            <div class="card position-relative rounded-lg shadow-lg">
+                
+                <div class="card-body text-center">
+                    <button type="button" class="btn btn-primary btn-lg shadow-lg">
+                        <i class="fas fa-plus"></i> +
+                    </button>
+                </div>
+                <div class="card-body text-center">
+                    <p class="card-text text-muted">Click the button to start adding a new recipe to your collection!</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-12 col-md-4 col-lg-3 mb-4">
+            <div class="card position-relative rounded-lg shadow-lg">
+                <div class="card-image">
+                    <img src="https://images.pexels.com/photos/1792749/pexels-photo-1792749.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid rounded-top" />
+                </div>
+                <a href="RecipeDetails?drinkId=1" class="card-action position-absolute top-0 end-0 p-3">
+                    <i class="fa fa-heart text-light"></i>
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title text-dark">Margarita</h5>
+                    <p class="card-text text-muted">Click to view the recipe details.</p>
+                    <p class="card-price text-success font-weight-bold"></p>
+
+                    
+                    <button class="btn btn-success btn-sm" disabled>Approved</button>
+                    
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="col-12 col-md-4 col-lg-3 mb-4">
+            <div class="card position-relative rounded-lg shadow-lg">
+                <div class="card-image">
+                    <img src="https://images.pexels.com/photos/734220/pexels-photo-734220.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid rounded-top" />
+                </div>
+                <a href="RecipeDetails?drinkId=2" class="card-action position-absolute top-0 end-0 p-3">
+                    <i class="fa fa-heart text-light"></i>
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title text-dark">Mojito</h5>
+                    <p class="card-text text-muted">Click to view the recipe details.</p>
+                    <p class="card-price text-success font-weight-bold"></p>
+
+                    
+                    <button class="btn btn-danger btn-sm" disabled>Not Approved</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

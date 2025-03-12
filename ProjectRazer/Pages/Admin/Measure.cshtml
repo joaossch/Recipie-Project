@@ -1,0 +1,49 @@
+﻿@page
+@model ProjectRazer.Pages.Admin.MeasureModel
+@{
+}
+<div class="container mt-4">
+    <h2 class="mb-4">Measures</h2>
+
+    <!-- Formulário para adicionar uma nova medida -->
+    <div class="card mb-4">
+        <div class="card-header">Add new Measures</div>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="labels text-light"><strong>Nome</strong></label>
+                    <input type="text" id="txtName" class="form-control form-control-lg bg-secondary text-white border-0" asp-for="Name" />
+                </div>
+                <p class="text-center text-danger mt-3">@Model.Message</p>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lista de medidas disponíveis -->
+    <div class="card">
+        <div class="card-header">Measures</div>
+        <div class="card-body">
+            @if (Model.MeasuresList != null && Model.MeasuresList.Any())
+            {
+                <ul class="list-group">
+                    @foreach (var measure in Model.MeasuresList)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>@measure.Name</span>
+                            <div>
+                                <form method="post" asp-page-handler="Edit" asp-route-id="@measure.Id" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-danger">Edit</button>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="text-muted mt-3">Nenhuma medida disponível.</p>
+            }
+        </div>
+    </div>
+</div>
